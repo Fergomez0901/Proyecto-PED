@@ -15,10 +15,16 @@ struct Butaca{
     Persona persona; 
 };
 
+struct Producto{
+    string nombre; 
+    float precioUni;
+    int cantidad; 
+};
+
 struct Factura{
     Persona persona; 
     Butaca butaca;
-    //Lista de de product 
+    
     int total; 
 };
 
