@@ -17,7 +17,8 @@ struct Butaca{
 
 struct Factura{
     Persona persona; 
-    Butaca butaca; 
+    Butaca butaca;
+    //Lista de de product 
     int total; 
 };
 
@@ -143,6 +144,10 @@ void agregarPersona(vector<Butaca> &sala1, vector<Butaca> &sala2, vector<Butaca>
             {
                 cout << "Error." << endl << endl; 
             }
+
+            //Fubcion de Dulceria
+            //Cobro
+
             break;
 
         case 3:
