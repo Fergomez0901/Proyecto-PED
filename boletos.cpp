@@ -229,7 +229,7 @@ void mostrarDisponibles(vector<Persona> &sala)
     {
         if (sala.at(i).butaca.disponible)
         {
-            cout << "Butaca # " << sala.at(i).butaca.numero << " - ";
+            cout << "But. # " << sala.at(i).butaca.numero << " - ";
         }
     }
     cout << endl;
