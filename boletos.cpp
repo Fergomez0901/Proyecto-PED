@@ -229,7 +229,7 @@ float cobrar(queue<Persona> *colaClientes, float pago)
             //Asignar el cliente que se encuentra al frente de la cola a la variable cliente
             Persona cliente = colaClientes->front();
 
-            cout << "Factura " << cliente.nombre << " " << cliente.apellido << "\t" << endl;
+            cout << endl << "Factura de: " << cliente.nombre << " " << cliente.apellido << "\t" << endl;
             //Recorrer la lista de los productos del cliente actuales con un for
             for (int i = 0; i < cliente.producto.size(); i++)
             {
@@ -471,7 +471,7 @@ int main()
             break;
         case 2:
             totalPagado = cobrar(&colaClientes, 0);
-            cout << "se le ha cobrado $" << totalPagado << " al cliente/s" << endl;
+            cout << "Se ha cobrado un total de $" << totalPagado << " al/los cliente/s" << endl << endl; ;
             break;
 
         case 3:
@@ -490,7 +490,7 @@ int main()
 
         case 4:
             cout << "Fin del programa." << endl;
-            exit(0);
+            status = false; 
             break;
         }
     }
