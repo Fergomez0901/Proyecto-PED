@@ -238,6 +238,17 @@ float cobrar(queue<Persona> *colaClientes, float pago)
 
                 cout << cliente.producto.at(i).tipodeproducto << ": $" << cliente.producto.at(i).precio << endl;
             }
+            if(cliente.estudiante)
+            {
+                cout << "Boleto de cine: $3.00" << endl; 
+                pago += 3.00;
+            }
+            else
+            {
+                cout << "Boleto de cine: $4.50" << endl;
+                pago += 4.50; 
+            }
+            
             //Eliminar el cliente al frente de la cola porque ya fue atendido, y avanzar en la cola
             colaClientes->pop();
         }
@@ -464,7 +475,7 @@ int main()
             break;
 
         case 3:
-            cout << "Mostrando disponibilidad Sala 1: " << endl; 
+            cout << endl << "Mostrando disponibilidad Sala 1: " << endl; 
             mostrarDisponibles(sala1);
             cout << endl; 
 
