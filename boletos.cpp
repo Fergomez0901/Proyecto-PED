@@ -248,7 +248,7 @@ float cobrar(queue<Persona> *colaClientes, float pago)
                 cout << "Boleto de cine: $4.50" << endl;
                 pago += 4.50; 
             }
-            
+            cout << endl; 
             //Eliminar el cliente al frente de la cola porque ya fue atendido, y avanzar en la cola
             colaClientes->pop();
         }
