@@ -4,7 +4,7 @@
   Luis Fernando Calvillo Castillo 00188620,
   Katerin Alexandra Alfaro Ángel 00240620,
   Fernando José Gómez Hernández 00147420,
-  Luis Alexander Hernandez Martines 00129020
+  Luis Alexander Hernandez Martinez 00129020
   
   *******************************************************************
   Descripción del proyecto: 
