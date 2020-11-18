@@ -30,6 +30,181 @@ Productos producto;
 Persona cliente;
 
 //******************************************************************************************************************************
+void dulceria(queue<Persona> &colaClientes)
+{
+    char opcion;
+    int opcion2;
+    int opcion3;
+    bool status = true;
+    cout << "Desea comprar en la dulceria? (s/n)" << endl;
+    cin >> opcion;
+    if (opcion == 's' || opcion == 'S')
+    {
+        while (status)
+        {
+            cout << endl;
+            cout << "***************Menu***************" << endl;
+            cout << "1) Soda " << endl;
+            cout << "2) Nachos " << endl;
+            cout << "3) Hot Dog " << endl;
+            cout << "4) Palomitas " << endl;
+            cout << "5) Combo Nachos " << endl;
+            cout << "6) Combo Hot Dogs" << endl;
+            cout << "7) Combo Mix" << endl;
+            cout << "8) Combito" << endl;
+            cout << "9) Salir" << endl;
+            cin >> opcion2;
+
+            switch (opcion2)
+            {
+            case 1:
+                cout << "1)Pequeña" << endl;
+                cout << "2)Mediana" << endl;
+                cout << "3)Grande" << endl;
+                cin >> opcion3;
+                switch (opcion3)
+                {
+                case 1:
+                    producto.tipodeproducto = "Soda (Pequeña)";
+                    producto.precio = 0.50;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                case 2:
+                    producto.tipodeproducto = "Soda (Mediana)";
+                    producto.precio = 1;
+                    colaClientes.back().producto.push_back(producto);;
+                    break;
+                case 3:
+                    producto.tipodeproducto = "Soda (Grande)";
+                    producto.precio = 1.50;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                default:
+                    cout << "ingrese un numero valido." << endl;
+                    break;
+                }
+                break;
+            case 2:
+                cout << "1)Normales" << endl;
+                cout << "2)Con Queso" << endl;
+                cout << "3)Con Carne" << endl;
+                cout << "4)Con Todo" << endl;
+                cin >> opcion3;
+                switch (opcion3)
+                {
+                case 1:
+                    producto.tipodeproducto = "Nachos (Normales)";
+                    producto.precio = 1;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                case 2:
+                    producto.tipodeproducto = "Nachos (Con Queso)";
+                    producto.precio = 1.25;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                case 3:
+                    producto.tipodeproducto = "Nachos (Con Carne)";
+                    producto.precio = 1.50;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                case 4:
+                    producto.tipodeproducto = "Nachos (Con Todo)";
+                    producto.precio = 1.75;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                default:
+                    cout << "ingrese un numero valido." << endl;
+                    break;
+                }
+                break;
+            case 3:
+                cout << "1)Normal" << endl;
+                cout << "2)Con Aderesos" << endl;
+                cout << "3)Con aderesos y chile" << endl;
+                cin >> opcion3;
+                switch (opcion3)
+                {
+                case 1:
+                    producto.tipodeproducto = "Hot dog (Normal)";
+                    producto.precio = 1;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                case 2:
+                    producto.tipodeproducto = "Hot dog (Con Aderesos)";
+                    producto.precio = 1.50;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                case 3:
+                    producto.tipodeproducto = "Hot dog (Con aderesos y chile)";
+                    producto.precio = 2;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                default:
+                    cout << "ingrese un numero valido." << endl;
+                    break;
+                }
+                break;
+            case 4:
+                cout << "1)Pequeñas" << endl;
+                cout << "2)Mediana" << endl;
+                cout << "3)Grandes" << endl;
+                cin >> opcion3;
+                switch (opcion3)
+                {
+                case 1:
+                    producto.tipodeproducto = "Palomitas (Pequeñas)";
+                    producto.precio = 2;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                case 2:
+                    producto.tipodeproducto = "Palomitas (Mediana)";
+                    producto.precio = 3;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                case 3:
+                    producto.tipodeproducto = "Palomitas (Grandes)";
+                    producto.precio = 4.50;
+                    colaClientes.back().producto.push_back(producto);
+                    break;
+                default:
+                    cout << "ingrese un numero valido." << endl;
+                    break;
+                }
+                break;
+            case 5:
+                producto.tipodeproducto = "Combo Nachos";
+                producto.precio = 8.50;
+                colaClientes.back().producto.push_back(producto);
+                break;
+            case 6:
+                producto.tipodeproducto = "Combo Hot Dogs";
+                producto.precio = 9;    
+                colaClientes.back().producto.push_back(producto);
+                break;
+            case 7:
+                producto.tipodeproducto = "Combo Mix";
+                producto.precio = 7.75;
+                colaClientes.back().producto.push_back(producto);
+                break;
+
+            case 8:
+                producto.tipodeproducto = "Combito";
+                producto.precio = 6;
+                colaClientes.back().producto.push_back(producto);
+                break;
+            case 9:
+                status = false;
+                cout << "Volviendo al menu...." << endl << endl;
+                break;
+
+            default:
+                cout << "Opcion invalida. Intentalo de nuevo" << endl;
+                break;
+            }
+        }
+    }
+}
+//******************************************************************************************************************************
 void inicializar(vector<Persona> &sala1, vector<Persona> &sala2, vector<Persona> &sala3)
 {
     for (int i = 0; i < sala1.size(); i++)
@@ -71,6 +246,18 @@ bool asignarButaca(vector<Persona> &sala, int puesto, string nombre, string apel
             sala.at(i).nombre = nombre;
             sala.at(i).apellido = apellido;
             sala.at(1).estudiante = estudiante;
+            if(estudiante)
+            {
+                producto.precio = 3.00;
+                producto.tipodeproducto = "Boleto";
+                sala.at(i).producto.push_back(producto);
+            }
+            else
+            {
+                producto.precio = 3.00;
+                producto.tipodeproducto = "Boleto";
+                sala.at(i).producto.push_back(producto);
+            }
             asignado = true;
             colaClients.push(sala.at(i));
             return asignado;
@@ -133,6 +320,7 @@ void agregarPersona(vector<Persona> &sala1, vector<Persona> &sala2, vector<Perso
         {
             cout << "Error." << endl << endl;
         }
+        dulceria(colaClients);
         break;
 
     case 2:
@@ -158,7 +346,7 @@ void agregarPersona(vector<Persona> &sala1, vector<Persona> &sala2, vector<Perso
         cin >> numButaca;
         cin.ignore();
         //Cambiar el estado de disponibilidad de la butaca y asignarle el cliente  nuevo.
-        asignado = asignarButaca(sala2, numButaca, unaPersona.nombre, unaPersona.apellido, estudiante, colaClients);
+        asignado = asignarButaca(sala2, numButaca, unaPersona.nombre, unaPersona.apellido, unaPersona.estudiante, colaClients);
         if (asignado)
         {
             cout << "Se ha asignado la butaca de manera exitosa." << endl << endl;
@@ -167,6 +355,7 @@ void agregarPersona(vector<Persona> &sala1, vector<Persona> &sala2, vector<Perso
         {
             cout << "Error." << endl << endl;
         }
+        dulceria(colaClients);
         break;
 
     case 3:
@@ -201,6 +390,7 @@ void agregarPersona(vector<Persona> &sala1, vector<Persona> &sala2, vector<Perso
         {
             cout << "Error." << endl << endl;
         }
+        dulceria(colaClients);
         break;
 
     case 4:
@@ -213,21 +403,22 @@ void agregarPersona(vector<Persona> &sala1, vector<Persona> &sala2, vector<Perso
     }
 }
 //******************************************************************************************************************************
-float cobrar(queue<Persona> *colaClientes, float pago)
+float cobrar(queue<Persona> &colaClientes, float pago)
 {
     //Verificación que haya clientes en la cola
-    if (colaClientes->empty())
+    if (colaClientes.empty())
     {
         cout << "No se ha realizado ningún cobro, no hab1a clientes en la cola" << endl;
         return 0;
     }
     else
     {
+        cout << colaClientes.size() << endl; 
         //Recorrer la cola por medio de un while, cuya condición sea que la cola NO esté vacía
-        while (!colaClientes->empty())
+        while (!colaClientes.empty())
         {
             //Asignar el cliente que se encuentra al frente de la cola a la variable cliente
-            Persona cliente = colaClientes->front();
+            Persona cliente = colaClientes.front();
 
             cout << endl << "Factura de: " << cliente.nombre << " " << cliente.apellido << "\t" << endl;
             //Recorrer la lista de los productos del cliente actuales con un for
@@ -238,203 +429,11 @@ float cobrar(queue<Persona> *colaClientes, float pago)
 
                 cout << cliente.producto.at(i).tipodeproducto << ": $" << cliente.producto.at(i).precio << endl;
             }
-            if(cliente.estudiante)
-            {
-                cout << "Boleto de cine: $3.00" << endl; 
-                pago += 3.00;
-            }
-            else
-            {
-                cout << "Boleto de cine: $4.50" << endl;
-                pago += 4.50; 
-            }
             cout << endl; 
             //Eliminar el cliente al frente de la cola porque ya fue atendido, y avanzar en la cola
-            colaClientes->pop();
+            colaClientes.pop();
         }
         return pago;
-    }
-}
-//******************************************************************************************************************************
-void dulceria(vector<Productos> &lista, queue<Persona> &colaClientes)
-{
-    char opcion;
-    int opcion2;
-    int opcion3;
-    bool status = true;
-    cout << "Desea comprar en la dulceria? (s/n)" << endl;
-    cin >> opcion;
-    if (opcion == 's' || opcion == 'S')
-    {
-        while (status)
-        {
-            cout << endl;
-            cout << "***************Menu***************" << endl;
-            cout << "1) Soda " << endl;
-            cout << "2) Nachos " << endl;
-            cout << "3) Hot Dog " << endl;
-            cout << "4) Palomitas " << endl;
-            cout << "5) Combo Nachos " << endl;
-            cout << "6) Combo Hot Dogs" << endl;
-            cout << "7) Combo Mix" << endl;
-            cout << "8) Combito" << endl;
-            cout << "9) Salir a cobrar" << endl;
-            cin >> opcion2;
-
-            switch (opcion2)
-            {
-            case 1:
-
-                cout << "1)Pequeña" << endl;
-                cout << "2)Mediana" << endl;
-                cout << "3)Grande" << endl;
-                cin >> opcion3;
-                switch (opcion3)
-                {
-                case 1:
-                    producto.tipodeproducto = "Soda (Pequeña)";
-                    producto.precio = 0.50;
-                    lista.push_back(producto);
-                    break;
-                case 2:
-                    producto.tipodeproducto = "Soda (Mediana)";
-                    producto.precio = 1;
-                    lista.push_back(producto);
-                    break;
-                case 3:
-                    producto.tipodeproducto = "Soda (Grande)";
-                    producto.precio = 1.50;
-                    lista.push_back(producto);
-                    break;
-                default:
-                    cout << "ingrese un numero valido." << endl;
-                    break;
-                }
-                break;
-            case 2:
-                cout << "1)Normales" << endl;
-                cout << "2)Con Queso" << endl;
-                cout << "3)Con Carne" << endl;
-                cout << "4)Con Todo" << endl;
-                cin >> opcion3;
-                switch (opcion3)
-                {
-                case 1:
-                    producto.tipodeproducto = "Nachos (Normales)";
-                    producto.precio = 1;
-                    lista.push_back(producto);
-                    break;
-                case 2:
-                    producto.tipodeproducto = "Nachos (Con Queso)";
-                    producto.precio = 1.25;
-                    lista.push_back(producto);
-                    break;
-                case 3:
-                    producto.tipodeproducto = "Nachos (Con Carne)";
-                    producto.precio = 1.50;
-                    lista.push_back(producto);
-                    break;
-                case 4:
-                    producto.tipodeproducto = "Nachos (Con Todo)";
-                    producto.precio = 1.75;
-                    lista.push_back(producto);
-                    break;
-                default:
-                    cout << "ingrese un numero valido." << endl;
-                    break;
-                }
-                break;
-            case 3:
-                cout << "1)Normal" << endl;
-                cout << "2)Con Aderesos" << endl;
-                cout << "3)Con aderesos y chile" << endl;
-                cin >> opcion3;
-                switch (opcion3)
-                {
-                case 1:
-                    producto.tipodeproducto = "Hot dog (Normal)";
-                    producto.precio = 1;
-                    lista.push_back(producto);
-                    break;
-                case 2:
-                    producto.tipodeproducto = "Hot dog (Con Aderesos)";
-                    producto.precio = 1.50;
-                    lista.push_back(producto);
-                    break;
-                case 3:
-                    producto.tipodeproducto = "Hot dog (Con aderesos y chile)";
-                    producto.precio = 2;
-                    lista.push_back(producto);
-                    break;
-                default:
-                    cout << "ingrese un numero valido." << endl;
-                    break;
-                }
-                break;
-            case 4:
-                cout << "1)Pequeñas" << endl;
-                cout << "2)Mediana" << endl;
-                cout << "3)Grandes" << endl;
-                cin >> opcion3;
-                switch (opcion3)
-                {
-                case 1:
-                    producto.tipodeproducto = "Palomitas (Pequeñas)";
-                    producto.precio = 2;
-                    lista.push_back(producto);
-                    break;
-                case 2:
-                    producto.tipodeproducto = "Palomitas (Mediana)";
-                    producto.precio = 3;
-                    lista.push_back(producto);
-                    break;
-                case 3:
-                    producto.tipodeproducto = "Palomitas (Grandes)";
-                    producto.precio = 4.50;
-                    lista.push_back(producto);
-                    break;
-                default:
-                    cout << "ingrese un numero valido." << endl;
-                    break;
-                }
-                break;
-            case 5:
-                producto.tipodeproducto = "Combo Nachos";
-                producto.precio = 8.50;
-                lista.push_back(producto);
-                break;
-            case 6:
-                producto.tipodeproducto = "Combo Hot Dogs";
-                producto.precio = 9;    
-                lista.push_back(producto);
-                break;
-            case 7:
-                producto.tipodeproducto = "Combo Mix";
-                producto.precio = 7.75;
-                lista.push_back(producto);
-                break;
-
-            case 8:
-                producto.tipodeproducto = "Combito";
-                producto.precio = 6;
-                lista.push_back(producto);
-                break;
-            case 9:
-                status = false;
-                cout << "volviendo al menu...." << endl
-                     << endl;
-                break;
-
-            default:
-                cout << "ingrese un numero valido." << endl;
-                break;
-            }
-        }
-        cliente.producto = lista;
-        //Agregando el cliente a la cola
-        colaClientes.push(cliente);
-        lista.clear();
-        return;
     }
 }
 //******************************************************************************************************************************
@@ -467,10 +466,9 @@ int main()
         {
         case 1:
             agregarPersona(sala1, sala2, sala3, colaClientes);
-            dulceria(lista, colaClientes);
             break;
         case 2:
-            totalPagado = cobrar(&colaClientes, 0);
+            totalPagado = cobrar(colaClientes, totalPagado);
             cout << "Se ha cobrado un total de $" << totalPagado << " al/los cliente/s" << endl << endl; ;
             break;
 
