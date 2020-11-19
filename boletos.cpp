@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+
 using namespace std;
 
 struct Productos
@@ -53,26 +54,26 @@ void dulceria(queue<Persona> &colaClientes)
             cout << "7) Combo Mix" << endl;
             cout << "8) Combito" << endl;
             cout << "9) Salir" << endl;
-            cin >> opcion2;
+            cout << "ingrese la opci"<<char(162) << "n del producto que desea: "; cin >> opcion2;
 
             switch (opcion2)
             {
             case 1:
-                cout << "1)Pequeña" << endl;
+                cout << "1)Pequenia" << endl;
                 cout << "2)Mediana" << endl;
                 cout << "3)Grande" << endl;
                 cin >> opcion3;
                 switch (opcion3)
                 {
                 case 1:
-                    producto.tipodeproducto = "Soda (Pequeña)";
+                    producto.tipodeproducto = "Soda (Pequenia)";
                     producto.precio = 0.50;
                     colaClientes.back().producto.push_back(producto);
                     break;
                 case 2:
                     producto.tipodeproducto = "Soda (Mediana)";
                     producto.precio = 1;
-                    colaClientes.back().producto.push_back(producto);;
+                    colaClientes.back().producto.push_back(producto);
                     break;
                 case 3:
                     producto.tipodeproducto = "Soda (Grande)";
@@ -140,19 +141,20 @@ void dulceria(queue<Persona> &colaClientes)
                     colaClientes.back().producto.push_back(producto);
                     break;
                 default:
-                    cout << "ingrese un numero valido." << endl;
+                    cout << "ingrese un n"<<char(163) << "mero valido." << endl;
                     break;
                 }
                 break;
             case 4:
-                cout << "1)Pequeñas" << endl;
+                cout << "1)Peque"<<char(164) << "as" << endl;
                 cout << "2)Mediana" << endl;
                 cout << "3)Grandes" << endl;
                 cin >> opcion3;
                 switch (opcion3)
                 {
                 case 1:
-                    producto.tipodeproducto = "Palomitas (Pequeñas)";
+
+                    producto.tipodeproducto = "Palomitas (pequenias)";
                     producto.precio = 2;
                     colaClientes.back().producto.push_back(producto);
                     break;
@@ -167,7 +169,7 @@ void dulceria(queue<Persona> &colaClientes)
                     colaClientes.back().producto.push_back(producto);
                     break;
                 default:
-                    cout << "ingrese un numero valido." << endl;
+                    cout << "ingrese un n"<<char(163) << "mero valido." << endl;
                     break;
                 }
                 break;
@@ -245,8 +247,8 @@ bool asignarButaca(vector<Persona> &sala, int puesto, string nombre, string apel
             sala.at(i).butaca.disponible = false;
             sala.at(i).nombre = nombre;
             sala.at(i).apellido = apellido;
-            sala.at(1).estudiante = estudiante;
-            if(estudiante)
+            sala.at(i).estudiante;
+            if(unaPersona.estudiante)
             {
                 producto.precio = 3.00;
                 producto.tipodeproducto = "Boleto";
@@ -254,7 +256,7 @@ bool asignarButaca(vector<Persona> &sala, int puesto, string nombre, string apel
             }
             else
             {
-                producto.precio = 3.00;
+                producto.precio = 4.50;
                 producto.tipodeproducto = "Boleto";
                 sala.at(i).producto.push_back(producto);
             }
@@ -276,11 +278,11 @@ void agregarPersona(vector<Persona> &sala1, vector<Persona> &sala2, vector<Perso
 
     char estudiante;
     bool asignado;
-
+    cout << endl; 
     cout << "Que pelicula desea ver?" << endl;
-    cout << "1) Pelicula 1" << endl;
-    cout << "2) Pelicula 2" << endl;
-    cout << "3) Pelicula 3" << endl;
+    cout << "1) Bob Esponja al rescate" << endl;
+    cout << "2) Bad Boys para siempre" << endl;
+    cout << "3) El diablo a todas horas" << endl;
     cout << "4) Salir" << endl;
     cout << "Ingrese una opcion: ";
     cin >> opcion;
@@ -398,7 +400,7 @@ void agregarPersona(vector<Persona> &sala1, vector<Persona> &sala2, vector<Perso
         break;
 
     default:
-        cout << "Opcion invalida" << endl << endl;
+        cout << "Opci"<< char(162) << "n invalida" << endl << endl;
         break;
     }
 }
@@ -408,7 +410,7 @@ float cobrar(queue<Persona> &colaClientes, float pago)
     //Verificación que haya clientes en la cola
     if (colaClientes.empty())
     {
-        cout << "No se ha realizado ningún cobro, no hab1a clientes en la cola" << endl;
+        cout << "No se ha realizado ning"<< char(163) << "n cobro, no hab1a clientes en la cola" << endl;
         return 0;
     }
     else
@@ -442,9 +444,7 @@ int main()
     vector<Persona> sala1(30);
     vector<Persona> sala2(30);
     vector<Persona> sala3(30);
-
     queue<Persona> colaClientes;
-
     vector<Productos> lista;
 
     inicializar(sala1, sala2, sala3);
@@ -454,12 +454,12 @@ int main()
     float totalPagado = 0;
     while (status)
     {
-        cout << "Menu" << endl;
+        cout << endl << "********************Menu Principal********************" << endl;
         cout << "1) Agregar persona a la cola" << endl;
         cout << "2) Cobrar" << endl;
         cout << "3) Verificar disponibilidad" << endl;
         cout << "4) Salir" << endl;
-        cout << "Ingrese una opcion: ";
+        cout << "Ingrese una opci"<<char(162) << "n: ";
         cin >> opcion;
 
         switch (opcion)
@@ -489,6 +489,10 @@ int main()
         case 4:
             cout << "Fin del programa." << endl;
             status = false; 
+            break;
+
+            default:
+                cout << "opci"<<char(162) << "n no valida" << endl;
             break;
         }
     }
